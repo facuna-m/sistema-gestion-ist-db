@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Personas</title>
+    <link rel="stylesheet" href="der.css">
+</head>
+<body>
+    <div class="page-container">
+        <a href="../main.html">
+            <img src="../Recursos/LogoIST2.png" alt="Instituto de Seguridad del Trabajo" class="titulo-imagen">
+        </a>
+            <h1>Gestión de Personas</h1>
+        
+        <label class="opciones-label">
+            <input id="add" name="opcion" type="button" value="Registrar" onclick="cambiarCampos('add')"> 
+            <input id="remove" name="opcion" type="button" value="Eliminar" onclick="cambiarCampos('remove')">
+            <input id="edit" name="opcion" type="button" value="Modificar" onclick="cambiarCampos('edit')"> 
+            <input id="consulta" name="opcion" type="button" value="Consultar" onclick="cambiarCampos('consulta')">
+        </label>
+
+        <form class="form-class">
+            <div id="addFields" style="display:none;">
+                <p>Rut: <input id="id" type="text"><br></p>
+                <p>Nombre: <input id="nombre" type="text"><br></p>
+                <p>Telefono: <input id="telefono" type="text"><br></p>
+                <p>Correo: <input id="correo" type="text"><br></p>
+                <p>Direccion: <input id="direccion" type="text"><br></p>
+                <p><input type="submit" value="Enviar" class="slot"></p>
+            </div>
+
+            <div id="removeFields" style="display:none;">
+                <p>Rut: <input id="rut" type="text"><br></p>
+                <p><input type="submit" value="Enviar" class="slot"></p>
+            </div>
+
+            <div id="editFields" style="display:none;">
+                <p>Rut: <input id="id" type="text"><br></p>
+                <p>Nombre: <input id="nombre" type="text"><br></p>
+                <p>Telefono: <input id="telefono" type="text"><br></p>
+                <p>Correo: <input id="correo" type="text"><br></p>
+                <p>Direccion: <input id="direccion" type="text"><br></p>
+                <p><input type="submit" value="Enviar" class="slot"></p>
+            </div>
+
+            <div id="consultFields" style="display:none;">
+                <p>Rut: <input id="rut" type="text"><br></p>
+                <p><input type="submit" value="Enviar" class="slot"></p>
+            </div>
+        </form>
+
+        <script>
+            function cambiarCampos(opcion) { //(opcion)
+                // Ocultar todos los campos de las opciones
+                document.getElementById("addFields").style.display = "none";
+                document.getElementById("removeFields").style.display = "none";
+                document.getElementById("editFields").style.display = "none";
+                document.getElementById("consultFields").style.display = "none";
+            
+                // Actualizar el valor del campo oculto "action"
+                document.getElementById("action").value = opcion;
+
+                // Mostrar los campos correspondientes según la opción seleccionada
+                if (opcion === 'add') {
+                    document.getElementById("addFields").style.display = "block";
+                } else if (opcion === 'remove') {
+                    document.getElementById("removeFields").style.display = "block";
+                } else if (opcion === 'edit') {
+                    document.getElementById("editFields").style.display = "block";
+                } else if (opcion === 'consulta') {
+                    document.getElementById("consultFields").style.display = "block";
+                }
+            }
+
+            // Llamar a la función para inicializar el estado cuando se carga la página
+            window.onload = function() {
+                // Inicializa la visibilidad de los campos
+                cambiarCampos('');
+            };
+        </script>
+    </div>
+</body>
+</html>

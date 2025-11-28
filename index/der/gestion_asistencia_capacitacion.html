@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro Asistencia a capacitaciones</title>
+    <link rel="stylesheet" href="der.css">
+</head>
+<body>
+    <div class="page-container">
+        <a href="../main.html">
+            <img src="../Recursos/LogoIST2.png" alt="Instituto de Seguridad del Trabajo" class="titulo-imagen">
+        </a>
+        <h1>Registro Asistencia a capacitaciones</h1>
+        <label class="opciones-label">
+            <input id="add" name="opcion" type="button" value="Registrar" onclick="cambiarCampos('add')"> 
+            <input id="consulta" name="opcion" type="button" value="Consultar" onclick="cambiarCampos('consulta')"> 
+        </label>
+
+        <form class="form-class">
+            <div id="addFields" style="display:none;">
+                <p>Rut: <input name="rut_cliente" type="text"><br></p>
+                <p>Id Capacitacion: <input name="id_capacitacion" type="text"><br></p>
+                <p>Registrar Asistencia: <br></p>
+                <p>Porcentaje de asistencia: <input name="registro_asistencia" type="text"><br></p>
+                <p>Fecha de inscripción: <input name="fecha_inscripcion" type="date"><br></p>
+                <input type="submit" value="Enviar" class="slot">
+            </div>
+
+            <div id="consultFields" style="display:none;">
+                <p>Rut: <input id="rut_cliente" type="text"><br></p>
+                <p>Id Capacitacion: <input name="id_capacitacion" type="text"><br></p>
+                <input type="submit" value="Enviar" class="slot">
+            </div>
+        </form>
+
+        <script>
+            function cambiarCampos(opcion) {
+                // Ocultar todos los campos de las opciones
+                document.getElementById("addFields").style.display = "none";
+                document.getElementById("consultFields").style.display = "none";
+            
+                // Mostrar los campos correspondientes según la opción seleccionada
+                if (opcion === 'add') {
+                    document.getElementById("addFields").style.display = "block";
+                } else if (opcion === 'consulta') {
+                    document.getElementById("consultFields").style.display = "block";
+                }
+            }
+
+            // Llamar a la función para inicializar el estado cuando se carga la página
+            window.onload = function() {
+                // Inicializa la visibilidad de los campos
+                cambiarCampos('');
+            };
+        </script>
+    </div>
+</body>
+</html>

@@ -1,0 +1,90 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: linear-gradient(to bottom, #51217d, #d467f5);
+    height: 100vh;
+    font-size: 16px;
+    justify-content: center;
+}
+
+.page-container {
+    margin: 0;
+    width: 100%;
+    max-width: 800px;
+    padding: 0px;
+    box-sizing: border-box;
+    background-color: #fff;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    align-items: center;
+}
+
+.titulo-imagen {
+    display: block;
+    margin: 0 auto;
+    width: 30%;
+    max-width: 669px;
+    height: auto;
+    margin-bottom: 40px;
+}
+
+.sub-titulo
+{
+    width: 90%;
+    border-radius: 30px;
+    text-align: center;       /* Centra el texto horizontalmente */
+    padding: 10px;             /* Espacio entre el texto y el borde */
+    margin: 0;               /* Elimina los márgenes por defecto */
+    background-color: #51217d; /* Fondo opcional para resaltar */
+    color: #fff;
+}
+.scroll-container {
+    margin: 0 auto;
+    width: 600px;              /* Ocupa todo el ancho del contenedor principal */
+    height: 350px;            /* Altura fija */
+    overflow-y: scroll;       /* Activa el scroll vertical */
+    overflow-x: hidden;
+    border-radius: 15px;       /* Bordes redondeados */
+    padding: 20px;            /* Espacio interno */
+    box-sizing: border-box;   /* Incluye padding y borde en el ancho total */
+    background-color: #51217d;   /* Fondo blanco */
+    margin-top: 50px;         /* Agrega un margen superior para separarlo del título */
+    flex-grow: 1;             /* Hace que el contenedor de scroll ocupe el espacio restante */
+    display: flex;
+    justify-content: center;  /* Centra el contenido del contenedor del scroll */
+}
+
+.scroll-container ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.scroll-container li {
+    margin-bottom: 10px;
+    width: 500px;
+    border-radius: 40px;
+    padding-block: 10px;
+    background-color: #d467f5;
+    text-align: center;
+    
+}
+.scroll-container li:hover{
+    color: #51217d;
+}
+.scroll-container li:last-child {
+    border-bottom: none;
+}
+.scroll-container li a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+}
+.scroll-container li a:hover {
+    color: #51217d;
+}

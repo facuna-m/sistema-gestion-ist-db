@@ -1,0 +1,128 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: linear-gradient(to bottom, #51217d, #d467f5);
+    height: 100vh;
+    font-size: 16px;
+    justify-content: center;
+}
+
+.page-container {
+    margin: 0;
+    width: 100%;
+    max-width: 800px;
+    padding: 0px;
+    box-sizing: border-box;
+    background: linear-gradient(to bottom, #51217d, #d467f5);
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    align-items: center;
+}
+
+.titulo-imagen {
+    display: block;
+    margin: 0 auto;
+    width: 30%;
+    max-width: 669px;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+h1 {
+    border-radius: 30px;
+    padding-inline: 30px;
+    padding-block: 10px;
+    width: 500px;
+    margin: 0 auto;
+    text-align: center;
+    margin-bottom: 2px;
+    background: #51217d;
+    color: #ffffff;
+}
+
+.opciones-label {
+    display: flex;
+    justify-content: center;  /* Centra los elementos horizontalmente */
+    width: 500px;
+    border-radius: 30px;
+    background-color: #51217d;
+    padding-inline: 30px;   
+    padding-block: 10px;
+    align-items: center;  
+    margin: 0 auto;
+    margin-bottom: 10px;
+}
+
+
+.form-class
+{
+    width: 500px;
+    padding-inline: 30px;
+    padding-block: 10px;
+    background-color: #51217d;
+    border-radius: 20px;
+    text-align: center;
+    color: #fff;
+    align-items: center;
+    margin: 0 auto;
+    margin-bottom: 10px;
+}
+
+.center{
+    margin: 0 auto;
+    padding: 10px;
+    border-radius: 4px;
+    border-color: black;
+}
+
+.slot{
+    margin: 5px;
+    padding: 1px;
+}
+
+#add
+{
+    margin-inline: 5px;
+    background-color: #fff;
+    border-radius: 20px;
+    width: 100px;
+    height: 40px;
+}
+#remove
+{
+    margin-inline: 5px;
+    background-color: #fff;
+    border-radius: 20px;
+    width: 100px;
+    height: 40px;
+}
+#edit
+{
+    margin-inline: 5px;
+    background-color: #fff;
+    border-radius: 20px;
+    width: 100px;
+    height: 40px;
+}
+#consulta
+{
+    margin-inline: 5px;
+    background-color: #fff;
+    border-radius: 20px;
+    width: 100px;
+    height: 40px;
+}
+.slot
+{
+    margin-inline: 5px;
+    background-color: #fff;
+    border-radius: 20px;
+    width: 100px;
+    height: 40px;
+}

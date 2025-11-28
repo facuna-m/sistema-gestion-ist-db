@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión Documento Prevención</title>
+    <link rel="stylesheet" href="der.css">
+</head>
+<body>
+    <div class="page-container">
+        <a href="../main.html">
+            <img src="../Recursos/LogoIST2.png" alt="Instituto de Seguridad del Trabajo" class="titulo-imagen">
+        </a>
+        <h1>Gestión Documento Prevención</h1>
+        <label class="opciones-label">
+            <input id="add" name="opcion" type="button" value="Registrar" onclick="cambiarCampos('add')"> 
+            <input id="remove" name="opcion" type="button" value="Eliminar" onclick="cambiarCampos('remove')">
+            <input id="edit" name="opcion" type="button" value="Modificar" onclick="cambiarCampos('edit')"> 
+            <input id="consulta" name="opcion" type="button" value="Consultar" onclick="cambiarCampos('consulta')">
+        </label>
+
+        <form class="form-class" action="../phpbd/doc_prev.php" method="post">
+            <input type="hidden" name="action" id="action">
+            <div id="addFields" style="display:none;">
+                <p>Id: <input name="id" type="text"><br></p>
+                <p>Nombre documento: <input name="nombre_documento" type="text"><br></p>
+                <p>Fecha Emisión: <input name="fecha_emision" type="date"><br></p>
+                <p>Autor: <input name="autor" type="text"><br></p>
+                <p>Tipo Documento: 
+                    <select name="tipo_documento">
+                        <option value="Proyecto">Proyecto</option>
+                        <option value="Circular">Circular</option>
+                        <option value="Protocolo">Protocolo</option>
+                    </select><br>
+                </p>
+                <p>Codigo Centro de Prevención de Riesgos: <input name=codigo_CPRR><br></p>
+                <p>ID empresa: <input name="id_empresa" type="text"><br></p>
+                <p><input type="submit" value="Enviar" class="slot"></p>
+            </div>
+        </form>
+
+        <form class="form-class" action="../phpbd/doc_prev.php" method="post">
+            <input type="hidden" name="action1" id="action1">
+            <div id="removeFields" style="display:none;">
+                <p>Id: <input name="id" type="text"><br></p>
+                <p><input type="submit" value="Enviar" class="slot"></p>
+            </div>
+        </form>
+
+        <form class="form-class" action="../phpbd/doc_prev.php" method="post">
+            <input type="hidden" name="action2" id="action2">
+            <div id="editFields" style="display:none;">
+                <p>Id: <input name="id" type="text"><br></p>
+                <p>Nombre documento: <input name="nombre_documento" type="text"><br></p>
+                <p>Fecha Emisión: <input name="fecha_emision" type="date"><br></p>
+                <p>Autor: <input name="autor" type="text"><br></p>
+                <p>Tipo Documento: 
+                    <select name="tipo_documento">
+                        <option value="Proyecto">Proyecto</option>
+                        <option value="Circular">Circular</option>
+                        <option value="Protocolo">Protocolo</option>
+                    </select><br>
+                </p>
+                <p>Codigo Centro de Prevención de Riesgos: <input name=codigo_CPRR><br></p>
+                <p>ID empresa: <input name="id_empresa" type="text"><br></p>
+                <p><input type="submit" value="Enviar" class="slot"></p>
+            </div>
+        </form>
+
+        <form class="form-class" action="../phpbd/doc_prev.php" method="post">
+            <input type="hidden" name="action3" id="action3">
+            <div id="consultFields" style="display:none;">
+                <p>Id: <input name="id" type="text"><br></p>
+                <p><input type="submit" value="Enviar" class="slot"></p>
+            </div>
+        </form>
+
+        <script>
+            function cambiarCampos(opcion) {
+                // Ocultar todos los campos de las opciones
+                document.getElementById("addFields").style.display = "none";
+                document.getElementById("removeFields").style.display = "none";
+                document.getElementById("editFields").style.display = "none";
+                document.getElementById("consultFields").style.display = "none";
+
+                // Actualizar el valor del campo oculto "action"
+                document.getElementById("action").value = opcion;
+                document.getElementById("action1").value = opcion;
+                document.getElementById("action2").value = opcion;
+                document.getElementById("action3").value = opcion;
+            
+                // Mostrar los campos correspondientes según la opción seleccionada
+                if (opcion === 'add') {
+                    document.getElementById("addFields").style.display = "block";
+                } else if (opcion === 'remove') {
+                    document.getElementById("removeFields").style.display = "block";
+                } else if (opcion === 'edit') {
+                    document.getElementById("editFields").style.display = "block";
+                } else if (opcion === 'consulta') {
+                    document.getElementById("consultFields").style.display = "block";
+                }
+            }
+        </script>
+    </div>
+</body>
+</html>

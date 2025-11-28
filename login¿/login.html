@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio de Sesión</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+    <img src="../index/Recursos/LogoIST2.png" alt="Instituto de Seguridad del Trabajo" class="titulo-imagen">
+    <div class="login-container">
+        <h2>Iniciar Sesión</h2>
+        <div id="error-message" class="error-message">Usuario o contraseña incorrectos</div>
+        <input type="text" id="username" placeholder="Usuario" required>
+        <input type="password" id="password" placeholder="Contraseña" required>
+        <input id="submit" name="Autenticar" type="button" value="Autenticar" onclick="authenticate()"> 
+    </div>
+    <script>
+        function authenticate() {
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            const errorMessage = document.getElementById('error-message');
+
+            // Validación
+            if (username === "admin" && password === "1234") {
+                window.location.href = "../index/main.html"
+                errorMessage.style.display = "none";
+            } else {
+                errorMessage.style.display = "block";
+                errorMessage.textContent = "Usuario o contraseña incorrectos";
+            }
+        }
+    </script>
+</body>
+</html>
